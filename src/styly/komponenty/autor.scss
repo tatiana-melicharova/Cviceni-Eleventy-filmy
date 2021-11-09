@@ -1,0 +1,16 @@
+.autor {
+	&__odkaz {
+		text-decoration: none;
+		color: $doplnkova-barva;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	&__odkaz,
+	&__samotneJmeno {
+		font-style: italic;
+	}
+}

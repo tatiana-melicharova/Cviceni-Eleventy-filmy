@@ -1,0 +1,7 @@
+<span class="autor">
+	{% if film.obsah.autor.odkaz %}
+		(<a class="autor__odkaz" href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)
+	{% else %}
+		(<span class="autor__samotneJmeno">{{ film.obsah.autor.jmeno }}</span>)
+	{% endif %}
+</span>

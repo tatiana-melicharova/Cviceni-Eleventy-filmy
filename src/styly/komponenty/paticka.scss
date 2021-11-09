@@ -1,0 +1,45 @@
+.paticka {
+	background-color: #fafafa;
+	padding: 1rem 0;
+
+	&__obsah {
+		max-width: $sirka-obsahu + 2 * $mezera-od-okraju;
+		width: 100%;
+		margin: 0 auto;
+		padding: $mezera-od-okraju;
+	}
+
+	&__casti {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+		gap: 1rem;
+	}
+
+	&__nadpis {
+		margin: 0;
+		font-size: 1.1em;
+		color: #303030;
+	}
+
+	&__seznam {
+		margin: 0.5em 0 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	&__polozka {
+		padding: 0.2em 0;
+		line-height: 1.1;
+	}
+
+	&__odkaz {
+		color: inherit;
+		text-decoration: none;
+		color: #444444;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}

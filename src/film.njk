@@ -1,0 +1,44 @@
+---
+layout: zakladni
+pagination:
+  data: filmy
+  size: 1
+  alias: film
+permalink: "/film/{{ film.nazev | slug }}/"
+---
+
+<div class="detail">
+	<main class="detail__hlavni">
+		<h2 class="hlavni-nadpis">{{ film.nazev }}</h2>
+
+		<dl class="detail__podrobnosti">
+			<dt class="detail__popisek">Rok:</dt>
+			<dd>{{ film.rok }}</dd>
+			<dt class="detail__popisek">Země:</dt>
+			<dd>{{ film.zeme | join(', ') }}</dd>
+			<dt class="detail__popisek">Žánr:</dt>
+			<dd>{{ film.zanr | join(' / ') }}</dd>
+			<dt class="detail__popisek">Délka:</dt>
+			<dd>{{ film.delka }} minut</dd>
+		</dl>
+
+		<h3 class="podnadpis">Obsah</h3>
+		<p class="detail__obsah">
+			{{ film.obsah.text }}
+			{% include "autor.njk" %}
+		</p>
+	</main>
+
+	<aside class="detail__vedlejsi">
+		<img class="detail__plakat" src="{{ film.plakat.url }}" width="{{ film.plakat.sirka }}" vyska="{{ film.plakat.height }}" alt="plakát">
+
+		<h3 class="podnadpis">Hodnocení</h3>
+		{% include "hodnoceni.njk" %}
+
+		{% set filmy = film.souvisejici %}
+		{% if filmy | length > 0 %}
+			<h3 class="podnadpis">Související filmy</h3>
+			{% include "seznam.njk" %}
+		{% endif %}
+	</aside>
+</div>

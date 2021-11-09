@@ -1,0 +1,41 @@
+.hodnoceni {
+	$velikost-hvezdy: 1.5rem;
+
+	--skore: 0;
+	width: $velikost-hvezdy * 5;
+	height: $velikost-hvezdy;
+	display: flex;
+
+	&--skore-1 {
+		--skore: 1;
+	}
+
+	&--skore-2 {
+		--skore: 2;
+	}
+
+	&--skore-3 {
+		--skore: 3;
+	}
+
+	&--skore-4 {
+		--skore: 4;
+	}
+
+	&--skore-5 {
+		--skore: 5;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		background-image: url('/obrazky/hvezda-vyplnena.svg');
+		background-size: contain;
+		flex-grow: var(--skore);
+	}
+
+	&::after {
+		background-image: url('/obrazky/hvezda-prazdna.svg');
+		flex-grow: calc(5 - var(--skore));
+	}
+}

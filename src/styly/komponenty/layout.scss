@@ -1,0 +1,17 @@
+.layout {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+
+	&__hlavicka {
+	}
+
+	&__telo {
+		max-width: $sirka-obsahu + 2 * $mezera-od-okraju;
+		width: 100%;
+		margin: 0 auto;
+		padding: 2 * $mezera-od-okraju $mezera-od-okraju;
+	}
+
+	&__paticka {
+	}
+}
