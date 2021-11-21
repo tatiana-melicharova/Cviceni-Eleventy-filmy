@@ -21,7 +21,7 @@
 		}
 	},
 	{
-		"nazev": "Ajťáci: Přichází internet",
+		"nazev": "Ajťáci - Přichází internet",
 		"rok": 2013,
 		"zanr": ["Komedie"],
 		"zeme": ["Velká Británie"],
@@ -98,7 +98,7 @@
 		"hodnoceni": 4,
 		"souvisejici": [
 			{ "nazev": "Pelíšky" },
-			{ "nazev": "Ajťáci: Přichází internet" }
+			{ "nazev": "Ajťáci - Přichází internet" }
 		],
 		"plakat": {
 			"url": "https://image.pmgstatic.com/cache/resized/w720/files/images/film/posters/163/781/163781903_f1e217.png",
@@ -128,7 +128,7 @@
 		}
 	},
 	{
-		"nazev": "Pat a Mat: Fax",
+		"nazev": "Pat a Mat - Fax",
 		"rok": 2003,
 		"zanr": ["Animovaný", "Krátkometrážní", "Rodinný"],
 		"zeme": ["Česko"],
