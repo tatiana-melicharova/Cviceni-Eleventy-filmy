@@ -2,11 +2,13 @@
 layout: elemental
 ---
 
- <ul>
-        {% for film in filmy %}
-            <li>
-                <a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-
+<section class="homepage">
+    <h2 class="homepage__title">Všechny</h2>
+    <ul class="homepage__film-list">
+            {% for film in filmy %}
+                <li class="homepage__film-list--item">
+                    <a class="homepage__film-list--link" href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+</section>

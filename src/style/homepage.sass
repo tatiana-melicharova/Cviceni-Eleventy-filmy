@@ -1,0 +1,32 @@
+.homepage
+
+    &__title
+        margin: 0 0 0.5em 0
+
+    &__film-list
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        &--item
+            padding: 0.2em 0
+            display: list-item
+
+        &--link,
+        &--link:visited,
+        &--link:active
+            text-decoration: none
+            color: $suplementary-color
+
+        &--link:hover
+            text-decoration: underline
+
+        &--link::before
+            content: ""
+            margin-bottom: 0.1em
+            width: 0.5em
+            height: 0.5em
+            background-color: $suplementary-color
+            display: inline-block
+            margin-right: 0.5em
+                    

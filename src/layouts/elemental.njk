@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/favicon.svg">
-    <title>FILMY.cz</title>
+    <title>
+        {% if film %} {{ film.nazev }} | {% endif %}FILMY.cz
+    </title>
+    <meta name="description" content="{% if film %} {{ film.obsah.text }} {% else %} Filmová databáze vybraných filmů. Web slouží jako cvičení práce s Eleventy. {% endif %}">
 </head>
 <body>
     {% include "header.njk" %}
-    {{ content | safe }}
+    <section class="content">
+        {{ content | safe }}
+    </section>
     {% include "footer.njk" %}
 </body>
 </html>

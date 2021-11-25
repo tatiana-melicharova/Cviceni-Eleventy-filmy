@@ -1,0 +1,35 @@
+.footer
+    background-color: #EDEDED
+    margin-top: 0.5em
+
+    &__content
+        max-width: 50rem
+        margin: 0 auto
+        padding: 1rem 0 2rem 0
+
+    &__section--title
+            font-size: 1.1em
+            color: #303030
+
+    &__parts
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
+        gap: 1rem
+
+    &__list
+        list-style-type: none
+        margin: 0
+        padding: 0
+    
+        &--item
+            padding: 0.2em 0
+            display: list-item
+
+        &--link,
+        &--link:visited,
+        &--link:active
+            text-decoration: none
+            color: #444444
+
+        &--link:hover
+            text-decoration: underline

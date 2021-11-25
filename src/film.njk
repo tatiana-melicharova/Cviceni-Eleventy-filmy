@@ -7,4 +7,41 @@ pagination:
 permalink: '/film/{{ film.nazev | slug }}/'
 ---
 
-<h2>{{ film.nazev }}</h2>
+<main class="detail__main">
+  <h2 class="detail__film-title">{{ film.nazev }}</h2>
+  <section class="detail__information">
+    <ul class="detail__list">
+      <li>
+        <span class="detail__list--description">Rok: </span> {{ film.rok }}
+      </li>
+      <li>
+        <span class="detail__list--description">Země: </span> {{ film.zeme }}
+      </li>
+      <li>
+        <span class="detail__list--description">Žánr: </span> {{ film.zanr }}
+      </li>
+      <li>
+        <span class="detail__list--description">Délka: </span> {{ film.delka }}
+      </li>
+    </ul>
+  </section>
+
+  <section class="detail__content">
+    <h3 class="detail__content--title">Obsah</h3>
+    <p class="detail__content--content">{{ film.obsah.text }}</p>
+  </section>
+</main>
+
+<aside class="detail__aside">
+  <img src="{{ film.plakat.url }}" widht="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}" alt="plakát">
+  <h3>Hodnocení</h3>
+  <div>{{ film.hodnoceni }}</div>
+  <h3>Související filmy</h3>
+  <ul>
+    {% for film in filmy %}
+      <li>
+        <a href="/film/{{ film.souvisejici.nazev | slug }}">{{ film.souvisejici.nazev }}</a>
+      </li>
+    {% endfor %} 
+  </ul>
+</aside>
