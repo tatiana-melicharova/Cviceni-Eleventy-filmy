@@ -39,12 +39,12 @@ permalink: '/film/{{ film.souvisejici.nazev | slug }}/'
     <img class="detail__poster" src="{{ film.plakat.url }}" widht="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}" alt="plakát">
     <h3 class="detail__title">Hodnocení</h3>
     <div class="stars stars--score-{{ hodnoceni }}"></div>
-    {% if film.souvisejici %}
+    {% if souvisejici-film %}
       <h3 class="detail__title">Související filmy</h3>
       <ul>
-        {% for film in filmy %}
+        {% for souvisejici-film in film.souvisejici %}
           <li>
-            <a href="/film/{{ film.souvisejici.nazev | slug }}">{{ film.souvisejici.nazev }}</a>
+            <a href="/film/{{ film.odkaz | slug }}">{{ souvisejici-film.nazev }}</a>
           </li>
         {% endfor %} 
       </ul>
