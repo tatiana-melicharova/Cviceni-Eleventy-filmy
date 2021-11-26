@@ -4,7 +4,7 @@ pagination:
   data: filmy
   size: 1
   alias: film
-permalink: '/film/{{ film.nazev | slug }}/'
+permalink: '/film/{{ film.souvisejici.nazev | slug }}/'
 ---
 
 <div class="detail">
@@ -27,9 +27,9 @@ permalink: '/film/{{ film.nazev | slug }}/'
       <p class="detail__content--content">{{ film.obsah.text }}</p>
       <span class="detail__content--author">
         {% if film.obsah.autor.odkaz %} 
-          <a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>
+          <a href="{{ film.obsah.autor.odkaz }}">({{ film.obsah.autor.jmeno }})</a>
         {% else %}
-          {{ film.obsah.autor.jmeno }}
+          ({{ film.obsah.autor.jmeno }})
         {% endif %}  
       </span>
     </section>
