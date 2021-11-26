@@ -1,0 +1,36 @@
+.detail
+    display: grid
+    grid-template-columns: 1fr 12rem 
+
+    &__title
+        font-size: 1.5rem
+        margin: 1.5em 0 0.7em
+
+    &__list
+        display: grid
+        grid-template-columns: auto 1fr
+        grid-gap: 0.4em 1.5em
+        margin: 0 0 1.7em
+
+        &--description
+            font-weight: 700
+
+        & dd
+            margin: 0
+
+    &__content--author
+        font-style: italic
+        color: $suplementary-color
+
+    &__poster
+        max-width: 100%
+        width: 100%
+        height: auto
+
+// .stars
+//     @each hodnota in hodnoceni
+//             --score: hodnoceni
+//         &--score-{{hodnoceni}}::before
+//             content: ""
+//             background-image: url(images/hvezda-vyplnena.svg)
+//             flex-grow: var(--score)

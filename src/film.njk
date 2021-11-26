@@ -7,41 +7,47 @@ pagination:
 permalink: '/film/{{ film.nazev | slug }}/'
 ---
 
-<main class="detail__main">
-  <h2 class="detail__film-title">{{ film.nazev }}</h2>
-  <section class="detail__information">
-    <ul class="detail__list">
-      <li>
-        <span class="detail__list--description">Rok: </span> {{ film.rok }}
-      </li>
-      <li>
-        <span class="detail__list--description">Země: </span> {{ film.zeme }}
-      </li>
-      <li>
-        <span class="detail__list--description">Žánr: </span> {{ film.zanr }}
-      </li>
-      <li>
-        <span class="detail__list--description">Délka: </span> {{ film.delka }}
-      </li>
-    </ul>
-  </section>
+<div class="detail">
+  <main class="detail__main">
+    <h2 class="detail__film-title">{{ film.nazev }}</h2>
+    <section class="detail__information">
+      <dl class="detail__list">
+        <dt class="detail__list--description">Rok:</dt>
+        <dd>{{ film.rok }}</dd>
+        <dt class="detail__list--description">Země:</dt>
+        <dd>{{ film.zeme }}</dd>
+        <dt class="detail__list--description">Žánr:</dt>
+        <dd>{{ film.zanr }}</dd>
+        <dt class="detail__list--description">Délka:</dt>
+        <dd>{{ film.delka }}</dd>
+    </section>
 
-  <section class="detail__content">
-    <h3 class="detail__content--title">Obsah</h3>
-    <p class="detail__content--content">{{ film.obsah.text }}</p>
-  </section>
-</main>
+    <section class="detail__content">
+      <h3 class="detail__title">Obsah</h3>
+      <p class="detail__content--content">{{ film.obsah.text }}</p>
+      <span class="detail__content--author">
+        {% if film.obsah.autor.odkaz %} 
+          <a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>
+        {% else %}
+          {{ film.obsah.autor.jmeno }}
+        {% endif %}  
+      </span>
+    </section>
+  </main>
 
-<aside class="detail__aside">
-  <img src="{{ film.plakat.url }}" widht="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}" alt="plakát">
-  <h3>Hodnocení</h3>
-  <div>{{ film.hodnoceni }}</div>
-  <h3>Související filmy</h3>
-  <ul>
-    {% for film in filmy %}
-      <li>
-        <a href="/film/{{ film.souvisejici.nazev | slug }}">{{ film.souvisejici.nazev }}</a>
-      </li>
-    {% endfor %} 
-  </ul>
-</aside>
+  <aside class="detail__aside">
+    <img class="detail__poster" src="{{ film.plakat.url }}" widht="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}" alt="plakát">
+    <h3 class="detail__title">Hodnocení</h3>
+    <div class="stars stars--score-{{ hodnoceni }}"></div>
+    {% if film.souvisejici %}
+      <h3 class="detail__title">Související filmy</h3>
+      <ul>
+        {% for film in filmy %}
+          <li>
+            <a href="/film/{{ film.souvisejici.nazev | slug }}">{{ film.souvisejici.nazev }}</a>
+          </li>
+        {% endfor %} 
+      </ul>
+    {% endif %}
+  </aside>
+</div>
