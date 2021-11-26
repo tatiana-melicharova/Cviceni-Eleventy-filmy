@@ -4,7 +4,7 @@ pagination:
   data: filmy
   size: 1
   alias: film
-permalink: '/film/{{ souvisejiciFilm.nazev | slug }}/'
+permalink: '/film/{{ film.nazev | slug }}/'
 ---
 
 <div class="detail">
@@ -41,10 +41,10 @@ permalink: '/film/{{ souvisejiciFilm.nazev | slug }}/'
     <div class="stars stars--score-{{ hodnoceni }}"></div>
     {% if film.souvisejici %}
       <h3 class="detail__title">Související filmy</h3>
-      <ul>
+      <ul class="detail__list-souvisejici">
         {% for souvisejiciFilm in film.souvisejici %}
-          <li>
-            <a href="/film/{{ souvisejiciFilm.nazev | slug }}">{{ souvisejiciFilm.nazev }}</a>
+          <li class="detail__list-souvisejici--item">
+            <a class="detail__list-souvisejici--link" href="/film/{{ film.nazev | slug }}">{{ souvisejiciFilm.nazev }}</a>
           </li>
         {% endfor %} 
       </ul>

@@ -8,7 +8,7 @@
 
     &__title
         font-size: 1.5rem
-        margin: 1.5em 0 0.7em
+        margin: 1.5em 0 0.5em
 
     &__list
         display: grid
@@ -37,6 +37,34 @@
         max-width: 100%
         width: 100%
         height: auto
+
+    &__list-souvisejici
+        list-style-type: none
+        margin: 0
+        padding: 0
+        display: block
+
+        &--item
+            padding: 0 0.2em
+            display: list-item
+
+        &--link,
+        &--link:visited,
+        &--link:active
+            text-decoration: none
+            color: $suplementary-color
+
+        &--link:hover
+            text-decoration: underline
+
+        &--link::before
+            content: ""
+            margin-bottom: 0.1em
+            width: 0.5em
+            height: 0.5em
+            background-color: $suplementary-color
+            display: inline-block
+            margin-right: 0.5em
 
 // .stars
 //     @each hodnota in hodnoceni
