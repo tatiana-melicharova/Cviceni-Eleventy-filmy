@@ -25,14 +25,15 @@ permalink: '/film/{{ film.nazev | slug }}/'
 
       <section class="detail__content">
         <h3 class="detail__title">Obsah</h3>
-        <p class="detail__content--content">{{ film.obsah.text }}</p>
-        <span class="detail__content--author">
-          {% if film.obsah.autor.odkaz %} 
-            (<a class="detail__content--author-link" href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)
-          {% else %}
-            ({{ film.obsah.autor.jmeno }})
-          {% endif %}  
-        </span>
+        <p class="detail__content--content">{{ film.obsah.text }}
+          <span class="detail__content--author">
+            {% if film.obsah.autor.odkaz %} 
+              (<a class="detail__content--author-link" href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)
+            {% else %}
+              ({{ film.obsah.autor.jmeno }})
+            {% endif %}  
+          </span>
+        </p>
       </section>
     </main>
 
