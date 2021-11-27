@@ -13,8 +13,9 @@
 
     &__parts
         display: grid
-        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
-        gap: 1rem
+        @media (min-width: 52rem)
+            grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr))
+            gap: 1rem
 
     &__list
         list-style-type: none
